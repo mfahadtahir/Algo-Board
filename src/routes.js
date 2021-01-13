@@ -5,27 +5,31 @@ window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
 
-const DashboardDefault = React.lazy(() => import("./Demo/Dashboard/Default"));
-const LongestCommonSubsequence = React.lazy(() => import("./Demo/Sets/LongestCommonSubsequence"));
-
-const UIBasicButton = React.lazy(() => import("./Demo/UIElements/Basic/Button"));
-const UIBasicBadges = React.lazy(() => import("./Demo/UIElements/Basic/Badges"));
-const UIBasicBreadcrumbPagination = React.lazy(() =>
-  import("./Demo/UIElements/Basic/BreadcrumbPagination")
+const DashboardDefault = React.lazy(() => import("./Screens/Dashboard/Default"));
+const LongestCommonSubsequence = React.lazy(() =>
+  import("./Screens/Sets/LongestCommonSubsequence")
+);
+const LongestIncreasingSubsequence = React.lazy(() =>
+  import("./Screens/Sets/LongestIncreasingSubsequence")
 );
 
-const UIBasicCollapse = React.lazy(() => import("./Demo/UIElements/Basic/Collapse"));
-const UIBasicTabsPills = React.lazy(() => import("./Demo/UIElements/Basic/TabsPills"));
-const UIBasicBasicTypography = React.lazy(() => import("./Demo/UIElements/Basic/Typography"));
+const UIBasicButton = React.lazy(() => import("./Screens/UIElements/Basic/Button"));
+const UIBasicBadges = React.lazy(() => import("./Screens/UIElements/Basic/Badges"));
+const UIBasicBreadcrumbPagination = React.lazy(() =>
+  import("./Screens/UIElements/Basic/BreadcrumbPagination")
+);
 
-const FormsElements = React.lazy(() => import("./Demo/Forms/FormsElements"));
+const UIBasicCollapse = React.lazy(() => import("./Screens/UIElements/Basic/Collapse"));
+const UIBasicTabsPills = React.lazy(() => import("./Screens/UIElements/Basic/TabsPills"));
+const UIBasicBasicTypography = React.lazy(() => import("./Screens/UIElements/Basic/Typography"));
 
-const BootstrapTable = React.lazy(() => import("./Demo/Tables/BootstrapTable"));
+const FormsElements = React.lazy(() => import("./Screens/Forms/FormsElements"));
 
-const Nvd3Chart = React.lazy(() => import("./Demo/Charts/Nvd3Chart/index"));
+const BootstrapTable = React.lazy(() => import("./Screens/Tables/BootstrapTable"));
 
-const OtherSamplePage = React.lazy(() => import("./Demo/Other/SamplePage"));
-const OtherDocs = React.lazy(() => import("./Demo/Other/Docs"));
+const Nvd3Chart = React.lazy(() => import("./Screens/Charts/Nvd3Chart/index"));
+
+const OtherSamplePage = React.lazy(() => import("./Screens/Other/SamplePage"));
 
 const routes = [
   { path: "/dashboard/default", exact: true, name: "Default", component: DashboardDefault },
@@ -35,7 +39,12 @@ const routes = [
     name: "Longest Common Subsequence",
     component: LongestCommonSubsequence,
   },
-
+  {
+    path: "/sets/lis",
+    exact: true,
+    name: "Longest Increasing Subsequence",
+    component: LongestIncreasingSubsequence,
+  },
   { path: "/basic/button", exact: true, name: "Basic Button", component: UIBasicButton },
   { path: "/basic/badges", exact: true, name: "Basic Badges", component: UIBasicBadges },
   {
@@ -61,7 +70,6 @@ const routes = [
   { path: "/tables/bootstrap", exact: true, name: "Bootstrap Table", component: BootstrapTable },
   { path: "/charts/nvd3", exact: true, name: "Nvd3 Chart", component: Nvd3Chart },
   { path: "/sample-page", exact: true, name: "Sample Page", component: OtherSamplePage },
-  { path: "/docs", exact: true, name: "Documentation", component: OtherDocs },
 ];
 
 export default routes;
