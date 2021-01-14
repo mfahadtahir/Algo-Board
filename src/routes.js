@@ -19,6 +19,9 @@ const ShortestCommonSuperSequence = React.lazy(() =>
 );
 const Knapsack = React.lazy(() => import("./Screens/Sets/Knapsack"));
 
+// Strings
+const LevenshteinDistance = React.lazy(() => import("./Screens/Strings/LevenshteinDistance"));
+
 // Component Examples
 const UIBasicButton = React.lazy(() => import("./Components/UIElements/Basic/Button"));
 const UIBasicBadges = React.lazy(() => import("./Components/UIElements/Basic/Badges"));
@@ -64,6 +67,13 @@ const routes = [
     exact: true,
     name: "0/1 Knapsack Problem",
     component: Knapsack,
+  },
+  // Strings
+  {
+    path: "/strings/levenshtein",
+    exact: true,
+    name: "Levenshtein Distance",
+    component: LevenshteinDistance,
   },
   // Components Examples
   { path: "/basic/button", exact: true, name: "Basic Button", component: UIBasicButton },

@@ -10,7 +10,7 @@ export default {
           id: "sets",
           title: "Sets",
           type: "collapse",
-          icon: "feather icon-box",
+          icon: "feather icon-grid",
           children: [
             {
               id: "lcs",
@@ -35,6 +35,20 @@ export default {
               title: "Knapsack",
               type: "item",
               url: "/sets/knapsack",
+            },
+          ],
+        },
+        {
+          id: "strings",
+          title: "Strings",
+          type: "collapse",
+          icon: "feather icon-type",
+          children: [
+            {
+              id: "levenshtein",
+              title: "Levenshtein",
+              type: "item",
+              url: "/strings/levenshtein",
             },
           ],
         },
@@ -107,7 +121,7 @@ export default {
               id: "charts",
               title: "Charts",
               type: "item",
-              icon: "feather icon-pie-chart",
+              // icon: "feather icon-pie-chart",
               url: "/charts/nvd3",
             },
             {
@@ -115,13 +129,13 @@ export default {
               title: "Form Elements",
               type: "item",
               url: "/forms/form-basic",
-              icon: "feather icon-file-text",
+              // icon: "feather icon-file-text",
             },
             {
               id: "bootstrap",
               title: "Table",
               type: "item",
-              icon: "feather icon-server",
+              // icon: "feather icon-server",
               url: "/tables/bootstrap",
             },
           ],
