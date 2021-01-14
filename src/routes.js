@@ -7,6 +7,12 @@ global.jQuery = $;
 
 const DashboardDefault = React.lazy(() => import("./Components/Dashboard/Default"));
 
+// Mathematics
+const NumberPartition = React.lazy(() => import("./Screens/Maths/NumberPartition"));
+const ChainMatrixMultiplication = React.lazy(() =>
+  import("./Screens/Maths/ChainMatrixMultiplication")
+);
+
 // Sets
 const LongestCommonSubsequence = React.lazy(() =>
   import("./Screens/Sets/LongestCommonSubsequence")
@@ -18,6 +24,7 @@ const ShortestCommonSuperSequence = React.lazy(() =>
   import("./Screens/Sets/ShortestCommonSuperSequence")
 );
 const Knapsack = React.lazy(() => import("./Screens/Sets/Knapsack"));
+const BalancedPartition = React.lazy(() => import("./Screens/Sets/BalancedPartition"));
 
 // Strings
 const LevenshteinDistance = React.lazy(() => import("./Screens/Strings/LevenshteinDistance"));
@@ -43,21 +50,36 @@ const OtherSamplePage = React.lazy(() => import("./Components/Other/SamplePage")
 
 const routes = [
   { path: "/dashboard/default", exact: true, name: "Default", component: DashboardDefault },
+
+  // Mathmatics
+  {
+    path: "/maths/partition",
+    exact: true,
+    name: "Number Partition Problem",
+    component: NumberPartition,
+  },
+  {
+    path: "/maths/chain-matrix-mul",
+    exact: true,
+    name: "Chain Matrix Multiplication",
+    component: ChainMatrixMultiplication,
+  },
+
   // Sets
   {
-    path: "/sets/lcs",
+    path: "/sets/longest-common-subsequence",
     exact: true,
     name: "Longest Common Subsequence",
     component: LongestCommonSubsequence,
   },
   {
-    path: "/sets/lis",
+    path: "/sets/longest-increasing-subsequence",
     exact: true,
     name: "Longest Increasing Subsequence",
     component: LongestIncreasingSubsequence,
   },
   {
-    path: "/sets/scs",
+    path: "/sets/shortest-common-supersequence",
     exact: true,
     name: "Shortest Common Supersequence ",
     component: ShortestCommonSuperSequence,
@@ -67,6 +89,12 @@ const routes = [
     exact: true,
     name: "0/1 Knapsack Problem",
     component: Knapsack,
+  },
+  {
+    path: "/sets/partition",
+    exact: true,
+    name: "Balanced Partition",
+    component: BalancedPartition,
   },
   // Strings
   {

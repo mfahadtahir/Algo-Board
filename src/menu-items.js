@@ -7,34 +7,60 @@ export default {
       icon: "icon-ui",
       children: [
         {
+          id: "maths",
+          title: "Mathametics",
+          type: "collapse",
+          icon: "feather icon-percent",
+          children: [
+            {
+              id: "partition",
+              title: "Number Partition",
+              type: "item",
+              url: "/maths/partition",
+            },
+            {
+              id: "matrixmultiplication",
+              title: "Chain Matrix Multiplication",
+              type: "item",
+              url: "/maths/chain-matrix-mul",
+            },
+          ],
+        },
+        {
           id: "sets",
           title: "Sets",
           type: "collapse",
           icon: "feather icon-grid",
           children: [
             {
-              id: "lcs",
-              title: "LCS",
+              id: "longest-common-subsequence",
+              title: "Longest Common Subsequence",
               type: "item",
-              url: "/sets/lcs",
+              url: "/sets/longest-common-subsequence",
             },
             {
-              id: "lis",
-              title: "LIS",
+              id: "longest-increasing-subsequence",
+              title: "Longest Increasing Subsequence",
               type: "item",
-              url: "/sets/lis",
+              url: "/sets/longest-increasing-subsequence",
             },
             {
-              id: "scs",
-              title: "SCS",
+              id: "shortest-common-supersequence",
+              title: "Shortest Common Supersequence",
               type: "item",
-              url: "/sets/scs",
+              url: "/sets/shortest-common-supersequence",
             },
             {
               id: "knapsack",
-              title: "Knapsack",
+              title: "0/1 Knapsack Problem",
               type: "item",
               url: "/sets/knapsack",
+            },
+            {
+              id: "partition",
+              title: "Balanced Partition",
+              type: "item",
+              url: "/sets/partition",
             },
           ],
         },
@@ -46,7 +72,7 @@ export default {
           children: [
             {
               id: "levenshtein",
-              title: "Levenshtein",
+              title: "Levenshtein Distance",
               type: "item",
               url: "/strings/levenshtein",
             },

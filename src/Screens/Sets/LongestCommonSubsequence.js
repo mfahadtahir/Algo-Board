@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  Button,
-  InputGroup,
-  FormControl,
-  DropdownButton,
-  Dropdown,
-} from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";

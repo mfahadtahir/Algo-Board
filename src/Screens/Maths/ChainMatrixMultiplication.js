@@ -6,7 +6,7 @@ import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
 import longestIncreasingSubsequence from "../../Algorithms/LongestIncreasingSubsequence";
 
-const LongestIncreasingSubsequence = () => {
+const ChainMatrixMultiplication = () => {
   const [seq, setSeq] = useState([]);
   const [longest, setLongest] = useState(0);
   const [graphData, setGraphData] = useState([
@@ -31,20 +31,15 @@ const LongestIncreasingSubsequence = () => {
   return (
     <Aux>
       <Row>
+        <Col>
+          <Card title="Matrix Chain Multiplication">
+            The problem consists of finding the best way (order) of multiplying a set of matrices.
+          </Card>
+        </Col>
+      </Row>
+      <Row>
         <Col md={12}>
-          <Card title="Longest Increasing Subsequence" isOption>
-            <Row>
-              <NVD3Chart
-                tooltip={{ enabled: true }}
-                type="discreteBarChart"
-                datum={graphData}
-                x="key"
-                y="value"
-                width={700}
-                height={300}
-                showValues
-              />
-            </Row>
+          <Card title="Input" isOption>
             <Row>
               <Col>
                 <Form>
@@ -64,17 +59,16 @@ const LongestIncreasingSubsequence = () => {
               </Col>
               <Button onClick={updateLIS}>Submit</Button>
             </Row>
-            <Row>
-              <h5 className="mt-5 ml-3">Output</h5>
-            </Row>
-            <Row>
-              <p className="ml-3">{longest}</p>
-            </Row>
           </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col title="Output">
+          <p className="ml-3">{longest}</p>
         </Col>
       </Row>
     </Aux>
   );
 };
 
-export default LongestIncreasingSubsequence;
+export default ChainMatrixMultiplication;
