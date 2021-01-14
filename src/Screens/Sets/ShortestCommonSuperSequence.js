@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  Button,
-  InputGroup,
-  FormControl,
-  DropdownButton,
-  Dropdown,
-} from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
-import longestCommonSubsequence from "../../Algorithms/LongestCommonSubsequence";
+import ShortestCommonSuperSequence from "../../Algorithms/ShortestCommonSuperSequence";
 
 const LongestCommonSubsequence = () => {
   const [str1, setStr1] = useState("");
@@ -22,18 +13,18 @@ const LongestCommonSubsequence = () => {
   const updateStr1 = () => {
     let firstSeq = document.getElementById("str1").value;
     setStr1(firstSeq);
-    setCommonStr(longestCommonSubsequence(firstSeq.split(""), str2.split("")).join(""));
+    setCommonStr(ShortestCommonSuperSequence(firstSeq.split(""), str2.split("")).join(""));
   };
   const updateStr2 = () => {
     let secondSeq = document.getElementById("str2").value;
     setStr2(secondSeq);
-    setCommonStr(longestCommonSubsequence(str1.split(""), secondSeq.split("")).join(""));
+    setCommonStr(ShortestCommonSuperSequence(str1.split(""), secondSeq.split("")).join(""));
   };
   return (
     <Aux>
       <Row>
         <Col>
-          <Card title="Longest Common Subsequence">
+          <Card title="Shortest Common Supersequence">
             <Row>
               <Col md={6}>
                 <Form>

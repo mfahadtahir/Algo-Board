@@ -13,7 +13,7 @@ import NVD3Chart from "react-nvd3";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
-import longestIncreasingSubsequence from "../../Algos/LongestIncreasingSubsequence";
+import longestIncreasingSubsequence from "../../Algorithms/LongestIncreasingSubsequence";
 
 const LongestIncreasingSubsequence = () => {
   const [seq, setSeq] = useState([]);

@@ -5,34 +5,42 @@ window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
 
-const DashboardDefault = React.lazy(() => import("./Screens/Dashboard/Default"));
+const DashboardDefault = React.lazy(() => import("./Components/Dashboard/Default"));
+
+// Sets
 const LongestCommonSubsequence = React.lazy(() =>
   import("./Screens/Sets/LongestCommonSubsequence")
 );
 const LongestIncreasingSubsequence = React.lazy(() =>
   import("./Screens/Sets/LongestIncreasingSubsequence")
 );
+const ShortestCommonSuperSequence = React.lazy(() =>
+  import("./Screens/Sets/ShortestCommonSuperSequence")
+);
+const Knapsack = React.lazy(() => import("./Screens/Sets/Knapsack"));
 
-const UIBasicButton = React.lazy(() => import("./Screens/UIElements/Basic/Button"));
-const UIBasicBadges = React.lazy(() => import("./Screens/UIElements/Basic/Badges"));
+// Component Examples
+const UIBasicButton = React.lazy(() => import("./Components/UIElements/Basic/Button"));
+const UIBasicBadges = React.lazy(() => import("./Components/UIElements/Basic/Badges"));
 const UIBasicBreadcrumbPagination = React.lazy(() =>
-  import("./Screens/UIElements/Basic/BreadcrumbPagination")
+  import("./Components/UIElements/Basic/BreadcrumbPagination")
 );
 
-const UIBasicCollapse = React.lazy(() => import("./Screens/UIElements/Basic/Collapse"));
-const UIBasicTabsPills = React.lazy(() => import("./Screens/UIElements/Basic/TabsPills"));
-const UIBasicBasicTypography = React.lazy(() => import("./Screens/UIElements/Basic/Typography"));
+const UIBasicCollapse = React.lazy(() => import("./Components/UIElements/Basic/Collapse"));
+const UIBasicTabsPills = React.lazy(() => import("./Components/UIElements/Basic/TabsPills"));
+const UIBasicBasicTypography = React.lazy(() => import("./Components/UIElements/Basic/Typography"));
 
-const FormsElements = React.lazy(() => import("./Screens/Forms/FormsElements"));
+const FormsElements = React.lazy(() => import("./Components/Forms/FormsElements"));
 
-const BootstrapTable = React.lazy(() => import("./Screens/Tables/BootstrapTable"));
+const BootstrapTable = React.lazy(() => import("./Components/Tables/BootstrapTable"));
 
-const Nvd3Chart = React.lazy(() => import("./Screens/Charts/Nvd3Chart/index"));
+const Nvd3Chart = React.lazy(() => import("./Components/Charts/Nvd3Chart/index"));
 
-const OtherSamplePage = React.lazy(() => import("./Screens/Other/SamplePage"));
+const OtherSamplePage = React.lazy(() => import("./Components/Other/SamplePage"));
 
 const routes = [
   { path: "/dashboard/default", exact: true, name: "Default", component: DashboardDefault },
+  // Sets
   {
     path: "/sets/lcs",
     exact: true,
@@ -45,6 +53,19 @@ const routes = [
     name: "Longest Increasing Subsequence",
     component: LongestIncreasingSubsequence,
   },
+  {
+    path: "/sets/scs",
+    exact: true,
+    name: "Shortest Common Supersequence ",
+    component: ShortestCommonSuperSequence,
+  },
+  {
+    path: "/sets/knapsack",
+    exact: true,
+    name: "0/1 Knapsack Problem",
+    component: Knapsack,
+  },
+  // Components Examples
   { path: "/basic/button", exact: true, name: "Basic Button", component: UIBasicButton },
   { path: "/basic/badges", exact: true, name: "Basic Badges", component: UIBasicBadges },
   {
