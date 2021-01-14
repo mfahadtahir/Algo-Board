@@ -22,6 +22,8 @@ const LongestIncreasingSubsequence = () => {
         values: [],
       },
       data = document.getElementById("longest_increasing_sequence").value.split(" ");
+    data = data.map((item) => parseInt(item));
+    if (isNaN(data[data.length - 1])) data.pop();
     setLongest(longestIncreasingSubsequence(data));
     data.forEach((value, key) => {
       graph.values.push({ key, value });
@@ -31,8 +33,15 @@ const LongestIncreasingSubsequence = () => {
   return (
     <Aux>
       <Row>
+        <Col>
+          <Card title="Longest Increasing Subsequence">
+            The problem consists of finding the best way (order) of multiplying a set of matrices.
+          </Card>
+        </Col>
+      </Row>
+      <Row>
         <Col md={12}>
-          <Card title="Longest Increasing Subsequence" isOption>
+          <Card title="Input">
             <Row>
               <NVD3Chart
                 tooltip={{ enabled: true }}
@@ -53,7 +62,7 @@ const LongestIncreasingSubsequence = () => {
                     <Form.Control
                       defaultValue={seq}
                       id="longest_increasing_sequence"
-                      // onChange={updateLIS}
+                      onChange={updateLIS}
                       as="textarea"
                       placeholder="1 2 3..."
                       rows="3"
@@ -62,14 +71,14 @@ const LongestIncreasingSubsequence = () => {
                   </Form.Group>
                 </Form>
               </Col>
-              <Button onClick={updateLIS}>Submit</Button>
             </Row>
-            <Row>
-              <h5 className="mt-5 ml-3">Output</h5>
-            </Row>
-            <Row>
-              <p className="ml-3">{longest}</p>
-            </Row>
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card title="Output">
+            <p className="ml-3">{longest}</p>
           </Card>
         </Col>
       </Row>

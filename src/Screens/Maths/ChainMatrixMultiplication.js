@@ -1,32 +1,19 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import NVD3Chart from "react-nvd3";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
-import longestIncreasingSubsequence from "../../Algorithms/LongestIncreasingSubsequence";
+import matrixChainOrder from "../../Algorithms/ChainMatrixMultiplication";
 
 const ChainMatrixMultiplication = () => {
-  const [seq, setSeq] = useState([]);
-  const [longest, setLongest] = useState(0);
-  const [graphData, setGraphData] = useState([
-    {
-      key: "Cumulative Return",
-      values: [],
-    },
-  ]);
+  const [chainOrder, setChainOrder] = useState(0);
 
-  const updateLIS = () => {
-    let graph = {
-        key: "Cumulative Return",
-        values: [],
-      },
-      data = document.getElementById("longest_increasing_sequence").value.split(" ");
-    setLongest(longestIncreasingSubsequence(data));
-    data.forEach((value, key) => {
-      graph.values.push({ key, value });
-    });
-    setGraphData([graph]);
+  const updateChainMultiplication = () => {
+    let data = document.getElementById("chain_matrix_multiplication").value.split(" ");
+    data = data.map((item) => parseInt(item));
+    if (isNaN(data[data.length - 1])) data.pop();
+    console.log(data);
+    setChainOrder(matrixChainOrder(data));
   };
   return (
     <Aux>
@@ -46,9 +33,8 @@ const ChainMatrixMultiplication = () => {
                   <Form.Group>
                     <Form.Label>Number Series</Form.Label>
                     <Form.Control
-                      defaultValue={seq}
-                      id="longest_increasing_sequence"
-                      // onChange={updateLIS}
+                      id="chain_matrix_multiplication"
+                      onChange={updateChainMultiplication}
                       as="textarea"
                       placeholder="1 2 3..."
                       rows="3"
@@ -57,14 +43,15 @@ const ChainMatrixMultiplication = () => {
                   </Form.Group>
                 </Form>
               </Col>
-              <Button onClick={updateLIS}>Submit</Button>
             </Row>
           </Card>
         </Col>
       </Row>
       <Row>
-        <Col title="Output">
-          <p className="ml-3">{longest}</p>
+        <Col>
+          <Card title="Output">
+            <p className="ml-3">{chainOrder}</p>
+          </Card>
         </Col>
       </Row>
     </Aux>
