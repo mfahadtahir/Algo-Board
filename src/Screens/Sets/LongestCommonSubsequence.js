@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Form } from "react-bootstrap";
+import { Row, Col, Form, CardDeck } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
@@ -25,46 +25,49 @@ const LongestCommonSubsequence = () => {
       <Row>
         <Col>
           <Card title="Longest Common Subsequence">
-            <Row>
-              <Col md={6}>
-                <Form>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>First String</Form.Label>
-                    <Form.Control
-                      defaultValue={str1}
-                      id="str1"
-                      onChange={updateStr1}
-                      as="textarea"
-                      placeholder="My String..."
-                      rows="3"
-                    />
-                    <Form.Text className="text-muted">Kindly Input First String</Form.Text>
-                  </Form.Group>
-                </Form>
-              </Col>
-              <Col md={6}>
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                  <Form.Label>Second String</Form.Label>
-                  <Form.Control
-                    defaultValue={str2}
-                    id="str2"
-                    onChange={updateStr2}
-                    as="textarea"
-                    placeholder="My String..."
-                    rows="3"
-                  />
-                  <Form.Text className="text-muted">Kindly Input Second String</Form.Text>
-                </Form.Group>
-              </Col>
-            </Row>
+            Longest Common Subsequence Problem has two sequences and we have to find the length of
+            longest subsequence present in both of them. A subsequence is a sequence that appears in
+            the same relative order, but not necessarily contiguous.
           </Card>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Card title="Output">
-            <p className="ml-3">{commonStr.length < 1 ? "---" : commonStr}</p>
-          </Card>
+          <CardDeck>
+            <Card title="Input">
+              <Row>
+                <Col md={12}>
+                  <Form>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>First String</Form.Label>
+                      <Form.Control
+                        defaultValue={str1}
+                        id="str1"
+                        onChange={updateStr1}
+                        type="text"
+                        placeholder="My String..."
+                      />
+                      <Form.Text className="text-muted">Kindly Input First String</Form.Text>
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                      <Form.Label>Second String</Form.Label>
+                      <Form.Control
+                        defaultValue={str2}
+                        id="str2"
+                        onChange={updateStr2}
+                        type="text"
+                        placeholder="My String..."
+                      />
+                      <Form.Text className="text-muted">Kindly Input Second String</Form.Text>
+                    </Form.Group>
+                  </Form>
+                </Col>
+              </Row>
+            </Card>
+            <Card title="Output">
+              <p className="ml-3">{commonStr.length < 1 ? "---" : commonStr}</p>
+            </Card>
+          </CardDeck>
         </Col>
       </Row>
     </Aux>

@@ -12,8 +12,8 @@ const ChainMatrixMultiplication = () => {
     let data = document.getElementById("chain_matrix_multiplication").value.split(" ");
     data = data.map((item) => parseInt(item));
     if (isNaN(data[data.length - 1])) data.pop();
-    console.log(data);
-    setChainOrder(matrixChainOrder(data));
+    setChainOrder(matrixChainOrder(data, 1));
+    // console.log(chainOrder);
   };
   return (
     <Aux>
@@ -26,12 +26,12 @@ const ChainMatrixMultiplication = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <Card title="Input" isOption>
+          <Card title="Input">
             <Row>
               <Col>
                 <Form>
                   <Form.Group>
-                    <Form.Label>Number Series</Form.Label>
+                    <Form.Label>Matrixs</Form.Label>
                     <Form.Control
                       id="chain_matrix_multiplication"
                       onChange={updateChainMultiplication}

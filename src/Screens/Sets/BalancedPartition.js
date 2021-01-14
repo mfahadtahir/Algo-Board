@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Form } from "react-bootstrap";
+import { Row, Col, Form, CardDeck } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
@@ -28,38 +28,23 @@ const LongestIncreasingSubsequence = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <Card title="Input">
-            <Row>
-              <Col>
-                <Form>
-                  <Form.Group>
-                    <Form.Label>Number Series</Form.Label>
-                    <Form.Control
-                      id="balancePartition"
-                      onChange={updatePartitions}
-                      as="textarea"
-                      placeholder="1 2 3..."
-                      rows="3"
-                    />
-                    <Form.Text className="text-muted">Kindly Input Numbers with space</Form.Text>
-                  </Form.Group>
-                </Form>
-              </Col>
-              {/* <Button onClick={updateLIS}>Submit</Button> */}
-            </Row>
-            {/* <Row>
-              <h5 className="mt-5 ml-3">Output</h5>
-            </Row> */}
-          </Card>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Card title="Output">
-            {/* <p className="ml-3"> */}
-            {init ? (partitions ? "Possible" : "Not Possible") : "---"}
-            {/* </p> */}
-          </Card>
+          <CardDeck>
+            <Card title="Input">
+              <Form>
+                <Form.Group>
+                  <Form.Label>Partition Number</Form.Label>
+                  <Form.Control
+                    id="balancePartition"
+                    onChange={updatePartitions}
+                    type="text"
+                    placeholder="10..."
+                  />
+                  <Form.Text className="text-muted">Kindly Input The Partition Space</Form.Text>
+                </Form.Group>
+              </Form>
+            </Card>
+            <Card title="Output">{init ? (partitions ? "Possible" : "Not Possible") : "---"}</Card>
+          </CardDeck>
         </Col>
       </Row>
     </Aux>

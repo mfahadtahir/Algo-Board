@@ -13,16 +13,16 @@ export default {
           icon: "feather icon-percent",
           children: [
             {
-              id: "partition",
-              title: "Number Partition",
-              type: "item",
-              url: "/maths/partition",
-            },
-            {
-              id: "matrixmultiplication",
+              id: "chain-matrix-multiplication",
               title: "Chain Matrix Multiplication",
               type: "item",
               url: "/maths/chain-matrix-mul",
+            },
+            {
+              id: "integer-partition",
+              title: "Integer Partition",
+              type: "item",
+              url: "/maths/integer-partition",
             },
           ],
         },
@@ -32,24 +32,6 @@ export default {
           type: "collapse",
           icon: "feather icon-grid",
           children: [
-            {
-              id: "longest-common-subsequence",
-              title: "Longest Common Subsequence",
-              type: "item",
-              url: "/sets/longest-common-subsequence",
-            },
-            {
-              id: "longest-increasing-subsequence",
-              title: "Longest Increasing Subsequence",
-              type: "item",
-              url: "/sets/longest-increasing-subsequence",
-            },
-            {
-              id: "shortest-common-supersequence",
-              title: "Shortest Common Supersequence",
-              type: "item",
-              url: "/sets/shortest-common-supersequence",
-            },
             {
               id: "knapsack",
               title: "0/1 Knapsack Problem",
@@ -61,6 +43,24 @@ export default {
               title: "Balanced Partition",
               type: "item",
               url: "/sets/partition",
+            },
+            {
+              id: "longest-increasing-subsequence",
+              title: "Longest Increasing Subsequence",
+              type: "item",
+              url: "/sets/longest-increasing-subsequence",
+            },
+            {
+              id: "longest-common-subsequence",
+              title: "Longest Common Subsequence",
+              type: "item",
+              url: "/sets/longest-common-subsequence",
+            },
+            {
+              id: "shortest-common-supersequence",
+              title: "Shortest Common Supersequence",
+              type: "item",
+              url: "/sets/shortest-common-supersequence",
             },
           ],
         },
@@ -75,6 +75,12 @@ export default {
               title: "Levenshtein Distance",
               type: "item",
               url: "/strings/levenshtein",
+            },
+            {
+              id: "word-break",
+              title: "Word Break",
+              type: "item",
+              url: "/strings/word-break",
             },
           ],
         },

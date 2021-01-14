@@ -8,7 +8,7 @@ global.jQuery = $;
 const DashboardDefault = React.lazy(() => import("./Components/Dashboard/Default"));
 
 // Mathematics
-const NumberPartition = React.lazy(() => import("./Screens/Maths/NumberPartition"));
+const IntegerPartition = React.lazy(() => import("./Screens/Maths/IntegerPartition"));
 const ChainMatrixMultiplication = React.lazy(() =>
   import("./Screens/Maths/ChainMatrixMultiplication")
 );
@@ -28,6 +28,7 @@ const BalancedPartition = React.lazy(() => import("./Screens/Sets/BalancedPartit
 
 // Strings
 const LevenshteinDistance = React.lazy(() => import("./Screens/Strings/LevenshteinDistance"));
+const WordBreak = React.lazy(() => import("./Screens/Strings/WordBreak"));
 
 // Component Examples
 const UIBasicButton = React.lazy(() => import("./Components/UIElements/Basic/Button"));
@@ -53,10 +54,10 @@ const routes = [
 
   // Mathmatics
   {
-    path: "/maths/partition",
+    path: "/maths/integer-partition",
     exact: true,
-    name: "Number Partition Problem",
-    component: NumberPartition,
+    name: "Integer Partition Problem",
+    component: IntegerPartition,
   },
   {
     path: "/maths/chain-matrix-mul",
@@ -103,6 +104,13 @@ const routes = [
     name: "Levenshtein Distance",
     component: LevenshteinDistance,
   },
+  {
+    path: "/strings/word-break",
+    exact: true,
+    name: "Word Break",
+    component: WordBreak,
+  },
+
   // Components Examples
   { path: "/basic/button", exact: true, name: "Basic Button", component: UIBasicButton },
   { path: "/basic/badges", exact: true, name: "Basic Badges", component: UIBasicBadges },

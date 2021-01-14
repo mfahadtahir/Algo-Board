@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Form } from "react-bootstrap";
+import { Row, Col, Form, CardDeck } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
@@ -25,46 +25,48 @@ const LevenshteinDistance = () => {
       <Row>
         <Col>
           <Card title="Levenshtein Distance">
-            <Row>
-              <Col md={6}>
-                <Form>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>First String</Form.Label>
-                    <Form.Control
-                      defaultValue={str1}
-                      id="str1"
-                      onChange={updateStr1}
-                      as="textarea"
-                      placeholder="My String..."
-                      rows="3"
-                    />
-                    <Form.Text className="text-muted">Kindly Input First String</Form.Text>
-                  </Form.Group>
-                </Form>
-              </Col>
-              <Col md={6}>
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                  <Form.Label>Second String</Form.Label>
-                  <Form.Control
-                    defaultValue={str2}
-                    id="str2"
-                    onChange={updateStr2}
-                    as="textarea"
-                    placeholder="My String..."
-                    rows="3"
-                  />
-                  <Form.Text className="text-muted">Kindly Input Second String</Form.Text>
-                </Form.Group>
-              </Col>
-            </Row>
+            The Levenshtein distance is a string metric for measuring difference between two
+            sequences. Informally, the Levenshtein distance between two words is the minimum number
+            of single-character edits (i.e. insertions, deletions or substitutions) required to
+            change one word into the other.
           </Card>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Card title="Output">
-            <p className="ml-3">{dist}</p>
-          </Card>
+          <CardDeck>
+            <Card title="Input">
+              <Row>
+                <Col md={12}>
+                  <Form>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>First String</Form.Label>
+                      <Form.Control
+                        defaultValue={str1}
+                        id="str1"
+                        onChange={updateStr1}
+                        type="text"
+                        placeholder="My String..."
+                      />
+                      <Form.Text className="text-muted">Kindly Input First String</Form.Text>
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                      <Form.Label>Second String</Form.Label>
+                      <Form.Control
+                        defaultValue={str2}
+                        id="str2"
+                        onChange={updateStr2}
+                        type="text"
+                        placeholder="My String..."
+                      />
+                      <Form.Text className="text-muted">Kindly Input Second String</Form.Text>
+                    </Form.Group>
+                  </Form>
+                </Col>
+              </Row>
+            </Card>
+            <Card title="Output">Levenshtein Distance: {dist}</Card>
+          </CardDeck>
         </Col>
       </Row>
     </Aux>
