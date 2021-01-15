@@ -8,7 +8,7 @@ import coinChangeMaking from "../../Algorithms/CoinChangeMaking";
 const CoinChangeMaking = () => {
   const [coins, setCoins] = useState("");
   const [cents, setCents] = useState();
-  const [coincChange, setCoinsChange] = useState("---");
+  const [coinChange, setCoinChange] = useState("---");
   const [init, setInit] = useState(false);
 
   const updateCoins = () => {
@@ -16,7 +16,7 @@ const CoinChangeMaking = () => {
     new_coins = new_coins.map((coin) => parseInt(coin));
     if (isNaN(new_coins[new_coins.length - 1])) new_coins.pop();
     setCoins(new_coins);
-    setCoinsChange(coinChangeMaking(new_coins, new_coins.length, cents));
+    setCoinChange(coinChangeMaking(new_coins, new_coins.length, cents));
     setInit(true);
   };
   const updateCents = () => {
@@ -24,7 +24,7 @@ const CoinChangeMaking = () => {
     console.log(new_cents);
     if (!new_cents) return;
     setCents(new_cents);
-    setCoinsChange(coinChangeMaking(coins, coins.length, new_cents));
+    setCoinChange(coinChangeMaking(coins, coins.length, new_cents));
     setInit(true);
   };
   return (
@@ -34,7 +34,7 @@ const CoinChangeMaking = () => {
           <Card title="Coin Change Making" isOption>
             The Coin Change Problem is considered by many to be essential to understanding the
             paradigm of programming known as Dynamic Programming. The two often are always paired
-            together because the coin change problem encompass the concepts of dynamic programming.{" "}
+            together because the coin change problem encompass the concepts of dynamic programming.
           </Card>
         </Col>
       </Row>
@@ -69,7 +69,7 @@ const CoinChangeMaking = () => {
                 </Col>
               </Row>
             </Card>
-            <Card title="Output">{init ? coincChange : "---"}</Card>
+            <Card title="Output">{init ? coinChange : "---"}</Card>
           </CardDeck>
         </Col>
       </Row>

@@ -30,6 +30,12 @@ export default {
               type: "item",
               url: "/maths/integer-partition",
             },
+            {
+              id: "rod-cutting",
+              title: "Rod Cutting",
+              type: "item",
+              url: "/maths/rod-cutting",
+            },
           ],
         },
         {

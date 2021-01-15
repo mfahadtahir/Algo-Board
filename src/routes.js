@@ -13,6 +13,7 @@ const ChainMatrixMultiplication = React.lazy(() =>
 );
 const CoinChangeMaking = React.lazy(() => import("./Screens/Maths/CoinChangeMaking"));
 const IntegerPartition = React.lazy(() => import("./Screens/Maths/IntegerPartition"));
+const RodCutting = React.lazy(() => import("./Screens/Maths/RodCutting"));
 
 // Sets
 const LongestCommonSubsequence = React.lazy(() =>
@@ -71,6 +72,12 @@ const routes = [
     exact: true,
     name: "Integer Partition Problem",
     component: IntegerPartition,
+  },
+  {
+    path: "/maths/rod-cutting",
+    exact: true,
+    name: "Rod Cutting",
+    component: RodCutting,
   },
 
   // Sets
