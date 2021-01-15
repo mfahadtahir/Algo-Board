@@ -19,6 +19,12 @@ export default {
               url: "/maths/chain-matrix-mul",
             },
             {
+              id: "coin-change-making",
+              title: "Coin Change Making",
+              type: "item",
+              url: "/maths/coin-change-making",
+            },
+            {
               id: "integer-partition",
               title: "Integer Partition",
               type: "item",

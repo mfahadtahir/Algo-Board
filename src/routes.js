@@ -8,10 +8,11 @@ global.jQuery = $;
 const DashboardDefault = React.lazy(() => import("./Components/Dashboard/Default"));
 
 // Mathematics
-const IntegerPartition = React.lazy(() => import("./Screens/Maths/IntegerPartition"));
 const ChainMatrixMultiplication = React.lazy(() =>
   import("./Screens/Maths/ChainMatrixMultiplication")
 );
+const CoinChangeMaking = React.lazy(() => import("./Screens/Maths/CoinChangeMaking"));
+const IntegerPartition = React.lazy(() => import("./Screens/Maths/IntegerPartition"));
 
 // Sets
 const LongestCommonSubsequence = React.lazy(() =>
@@ -54,16 +55,22 @@ const routes = [
 
   // Mathmatics
   {
-    path: "/maths/integer-partition",
-    exact: true,
-    name: "Integer Partition Problem",
-    component: IntegerPartition,
-  },
-  {
     path: "/maths/chain-matrix-mul",
     exact: true,
     name: "Chain Matrix Multiplication",
     component: ChainMatrixMultiplication,
+  },
+  {
+    path: "/maths/coin-change-making",
+    exact: true,
+    name: "Coin Change Making",
+    component: CoinChangeMaking,
+  },
+  {
+    path: "/maths/integer-partition",
+    exact: true,
+    name: "Integer Partition Problem",
+    component: IntegerPartition,
   },
 
   // Sets
