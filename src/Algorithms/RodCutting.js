@@ -8,7 +8,7 @@
 const RodCudding = (price, rodLength) => {
   if (rodLength <= 0 || !rodLength) return 0;
   // console.log(rodLength);
-  let max_val = 0;
+  let max_val = Number.NEGATIVE_INFINITY;
 
   // Recursively cut the rod in different pieces and compare different
   // configurations

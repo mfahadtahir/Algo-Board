@@ -4,6 +4,7 @@ import { Row, Col, Form, CardDeck } from "react-bootstrap";
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
 import levenshteinDistance from "../../Algorithms/LevenshteinDistance";
+import { twoStringSample } from "../../Samples";
 
 const LevenshteinDistance = () => {
   const [str1, setStr1] = useState("");
@@ -20,6 +21,12 @@ const LevenshteinDistance = () => {
     setStr2(secondSeq);
     setDist(levenshteinDistance(str1, secondSeq));
   };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+    setStr1(twoStringSample[sampleNum][0]);
+    setStr2(twoStringSample[sampleNum][1]);
+    setDist(levenshteinDistance(twoStringSample[sampleNum][0], twoStringSample[sampleNum][1]));
+  };
   return (
     <Aux>
       <Row>
@@ -35,7 +42,7 @@ const LevenshteinDistance = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Row>
                 <Col md={12}>
                   <Form>

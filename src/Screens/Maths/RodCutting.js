@@ -27,12 +27,14 @@ const RodCutting = () => {
     setRodCut(rodCutting(new_prices, new_prices.length));
     setInit(true);
   };
-
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+  };
   return (
     <Aux>
       <Row>
         <Col>
-          <Card title="Rod Cutting" isOption>
+          <Card title="Rod Cutting">
             Given a rod of length n inches and an array of prices that contains prices of all pieces
             of size smaller than n. Determine the maximum value obtainable by cutting up the rod and
             selling the pieces.
@@ -42,7 +44,7 @@ const RodCutting = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Row>
                 <Col md={12}>
                   <Form>

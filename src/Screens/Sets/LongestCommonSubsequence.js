@@ -4,6 +4,7 @@ import { Row, Col, Form, CardDeck } from "react-bootstrap";
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
 import longestCommonSubsequence from "../../Algorithms/LongestCommonSubsequence";
+import { twoStringSample } from "../../Samples";
 
 const LongestCommonSubsequence = () => {
   const [str1, setStr1] = useState("");
@@ -20,6 +21,17 @@ const LongestCommonSubsequence = () => {
     setStr2(secondSeq);
     setCommonStr(longestCommonSubsequence(str1.split(""), secondSeq.split("")).join(""));
   };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+    setStr1(twoStringSample[sampleNum][0]);
+    setStr2(twoStringSample[sampleNum][1]);
+    setCommonStr(
+      longestCommonSubsequence(
+        twoStringSample[sampleNum][0].split(""),
+        twoStringSample[sampleNum][1].split("")
+      ).join("")
+    );
+  };
   return (
     <Aux>
       <Row>
@@ -34,7 +46,7 @@ const LongestCommonSubsequence = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Row>
                 <Col md={12}>
                   <Form>

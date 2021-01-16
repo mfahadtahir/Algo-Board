@@ -4,17 +4,29 @@ import { Row, Col, Form, CardDeck } from "react-bootstrap";
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
 import balancedPartition from "../../Algorithms/BalancedPartition";
+import { BalancedPartitionSample } from "../../Samples";
 
 const LongestIncreasingSubsequence = () => {
+  const [seq, setSeq] = useState("");
   const [partitions, setPartitions] = useState(false);
   const [init, setInit] = useState(false);
+
   const updatePartitions = () => {
     let data = document.getElementById("balancePartition").value.split(" ");
     data = data.map((item) => parseInt(item));
+
+    if (isNaN(data[data.length - 1])) data.pop();
+
     let result = balancedPartition(data);
     console.log(result);
     setPartitions(result);
     setInit(true);
+  };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+    setSeq(BalancedPartitionSample[sampleNum].join(" "));
+    updatePartitions();
+    // setPartitions(balancedPartition(BalancedPartitionSample[sampleNum]));
   };
   return (
     <Aux>
@@ -29,11 +41,12 @@ const LongestIncreasingSubsequence = () => {
       <Row>
         <Col md={12}>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Form>
                 <Form.Group>
                   <Form.Label>Partition Number</Form.Label>
                   <Form.Control
+                    defaultValue={seq}
                     id="balancePartition"
                     onChange={updatePartitions}
                     type="text"

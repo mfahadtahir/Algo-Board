@@ -11,6 +11,9 @@ const IntegerPartition = () => {
   const updatePartitions = () => {
     setPartitions(numberPartition(parseInt(document.getElementById("partitionNumber").value)));
   };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+  };
   return (
     <Aux>
       <Row>
@@ -25,7 +28,7 @@ const IntegerPartition = () => {
       <Row>
         <Col md={12}>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Form>
                 <Form.Group>
                   <Form.Label>Partition Number</Form.Label>

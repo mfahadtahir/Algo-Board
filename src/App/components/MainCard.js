@@ -5,26 +5,14 @@ import windowSize from "react-window-size";
 import Aux from "../../hoc/_Aux";
 import DEMO from "../../store/constant";
 
+const samples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 class MainCard extends Component {
   state = {
     isOption: this.props.isOption,
-    fullCard: false,
-    collapseCard: false,
-    loadCard: false,
-    cardRemove: false,
   };
-
-  cardReloadHandler = () => {
-    this.setState({ loadCard: true });
-    setInterval(() => {
-      this.setState({ loadCard: false });
-    }, 3000);
+  implementSample = (sampleNum) => {
+    this.props.setSample(sampleNum);
   };
-
-  cardRemoveHandler = () => {
-    this.setState({ cardRemove: true });
-  };
-
   render() {
     let fullScreenStyle, loader, cardHeaderRight, cardHeader;
     let card = "";
@@ -38,7 +26,18 @@ class MainCard extends Component {
               <i className="feather icon-more-horizontal" />
             </Dropdown.Toggle>
             <Dropdown.Menu as="ul" className="list-unstyled card-option">
-              <Dropdown.Item
+              {samples.map((sample, key) => (
+                <Dropdown.Item
+                  key={key}
+                  as="li"
+                  className="dropdown-item"
+                  onClick={() => this.implementSample(key)}
+                >
+                  <i className="feather icon-sliders" />
+                  <a href={DEMO.BLANK_LINK}> Test Sample {sample} </a>
+                </Dropdown.Item>
+              ))}
+              {/* <Dropdown.Item
                 as="li"
                 className="dropdown-item"
                 onClick={() => {
@@ -68,6 +67,7 @@ class MainCard extends Component {
                 />
                 <a href={DEMO.BLANK_LINK}> {this.state.collapseCard ? "Expand" : "Collapse"} </a>
               </Dropdown.Item>
+
               <Dropdown.Item as="li" className="dropdown-item" onClick={this.cardReloadHandler}>
                 <i className="feather icon-refresh-cw" />
                 <a href={DEMO.BLANK_LINK}> Reload </a>
@@ -75,7 +75,7 @@ class MainCard extends Component {
               <Dropdown.Item as="li" className="dropdown-item" onClick={this.cardRemoveHandler}>
                 <i className="feather icon-trash" />
                 <a href={DEMO.BLANK_LINK}> Remove </a>
-              </Dropdown.Item>
+              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
         </div>

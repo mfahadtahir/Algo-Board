@@ -1,30 +1,32 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
+import knapsack from "../../Algorithms/Knapsack";
 
-class Knapsack extends Component {
-  render() {
-    return (
-      <Aux>
-        <Row>
-          <Col>
-            <Card title="Knapsack">
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum."
-              </p>
-            </Card>
-          </Col>
-        </Row>
-      </Aux>
-    );
-  }
-}
+const Knapsack = () => {
+  useEffect(() => {
+    console.log(knapsack(2, [1, 1, 1], [10, 20, 30], 3));
+  }, []);
+  return (
+    <Aux>
+      <Row>
+        <Col>
+          <Card title="Knapsack">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum."
+            </p>
+          </Card>
+        </Col>
+      </Row>
+    </Aux>
+  );
+};
 
 export default Knapsack;

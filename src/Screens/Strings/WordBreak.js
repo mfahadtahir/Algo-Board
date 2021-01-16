@@ -23,6 +23,9 @@ const WordBreak = () => {
     setWordBreak(longestCommonSubsequence(dictionary.split(""), myString.split("")).join(""));
     setInit(true);
   };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+  };
   return (
     <Aux>
       <Row>
@@ -37,7 +40,7 @@ const WordBreak = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Row>
                 <Col md={12}>
                   <Form>

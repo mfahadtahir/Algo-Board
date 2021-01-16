@@ -30,11 +30,14 @@ const CoinChangeMaking = () => {
     setCoinChange(coinChangeMaking(coins, coins.length, new_cents));
     setInit(true);
   };
+  const setSample = (sampleNum) => {
+    console.log(sampleNum);
+  };
   return (
     <Aux>
       <Row>
         <Col>
-          <Card title="Coin Change Making" isOption>
+          <Card title="Coin Change Making">
             The Coin Change Problem is considered by many to be essential to understanding the
             paradigm of programming known as Dynamic Programming. The two often are always paired
             together because the coin change problem encompass the concepts of dynamic programming.
@@ -44,7 +47,7 @@ const CoinChangeMaking = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card title="Input">
+            <Card title="Input" isOption setSample={setSample}>
               <Row>
                 <Col md={12}>
                   <Form>

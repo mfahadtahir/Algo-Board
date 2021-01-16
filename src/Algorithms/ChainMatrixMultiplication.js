@@ -1,19 +1,38 @@
-export default function MatrixChainOrder(matrixArray, i) {
-  let dp = Array(10).fill(Array(10).fill(-1)),
-    j = matrixArray.length - 1;
-  if (i == j) return 0;
-  // console.log("first step passed");
-  if (dp[i][j] != -1) return dp[i][j];
+/**
+ * Dynamic programming approach to find Chain Matrix Order.
+ * Time Complexity: O(N*W).
+ *
+ * @param {number[]} matrixArray
+ * @param {number} n
+ * @return {number}
+ */
 
-  dp[i][j] = Infinity;
-  for (let k = i; k < j; k++) {
-    dp[i][j] = Math.min(
-      dp[i][j],
-      MatrixChainOrder(matrixArray, i, k) +
-        MatrixChainOrder(matrixArray, k + 1, j) +
-        matrixArray[i - 1] * matrixArray[k] * matrixArray[j]
-    );
+export default function ChainMatrixOrder(matrixArray, n) {
+  /* For simplicity of the program, one 
+    extra row and one extra column are 
+    allocated in m[][]. 0th row and 0th 
+    column of m[][] are not used */
+  let m = Array(n).fill(Array(n).fill(0));
+
+  let i, j, k, L, q;
+
+  /* m[i, j] = Minimum number of scalar 
+    multiplications needed to compute the 
+    matrix A[i]A[i+1]...A[j] = A[i..j] where 
+    dimension of A[i] is p[i-1] x p[i] */
+
+  // L is chain length.
+  for (L = 2; L < n; L++) {
+    for (i = 1; i < n - L + 1; i++) {
+      j = i + L - 1;
+      m[i][j] = Number.POSITIVE_INFINITY;
+      for (k = i; k <= j - 1; k++) {
+        // q = cost/scalar multiplications
+        q = m[i][k] + m[k + 1][j] + matrixArray[i - 1] * matrixArray[k] * matrixArray[j];
+        if (q < m[i][j]) m[i][j] = q;
+      }
+    }
   }
-  console.log(dp);
-  return dp[i][j];
+  console.log(m);
+  return m[1][n - 1];
 }
