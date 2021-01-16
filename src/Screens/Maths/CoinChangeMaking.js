@@ -12,15 +12,18 @@ const CoinChangeMaking = () => {
   const [init, setInit] = useState(false);
 
   const updateCoins = () => {
+    if (!cents) return;
     let new_coins = document.getElementById("coins").value.split(" ");
     new_coins = new_coins.map((coin) => parseInt(coin));
-    if (isNaN(new_coins[new_coins.length - 1])) new_coins.pop();
+    if (isNaN(new_coins[new_coins.length - 1])) {
+      new_coins.pop();
+    }
     setCoins(new_coins);
     setCoinChange(coinChangeMaking(new_coins, new_coins.length, cents));
     setInit(true);
   };
   const updateCents = () => {
-    let new_cents = document.getElementById("cents").value;
+    let new_cents = parseInt(document.getElementById("cents").value);
     console.log(new_cents);
     if (!new_cents) return;
     setCents(new_cents);
@@ -46,7 +49,7 @@ const CoinChangeMaking = () => {
                 <Col md={12}>
                   <Form>
                     <Form.Group controlId="coins">
-                      <Form.Label>Input Disctionary</Form.Label>
+                      <Form.Label>Input Coins</Form.Label>
                       <Form.Control
                         defaultValue={coins}
                         onChange={updateCoins}
@@ -56,7 +59,7 @@ const CoinChangeMaking = () => {
                       <Form.Text className="text-muted">Kindly Input Coins with Spaces</Form.Text>
                     </Form.Group>
                     <Form.Group controlId="cents">
-                      <Form.Label>Input String</Form.Label>
+                      <Form.Label>Input Cents</Form.Label>
                       <Form.Control
                         defaultValue={cents}
                         onChange={updateCents}
