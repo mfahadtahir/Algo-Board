@@ -31,9 +31,8 @@ const WordBreak = () => {
       <Row>
         <Col>
           <Card title="Word Break">
-            Longest Common Subsequence Problem has two sequences and we have to find the length of
-            longest subsequence present in both of them. A subsequence is a sequence that appears in
-            the same relative order, but not necessarily contiguous.
+            Given an input string and a dictionary of words, find out if the input string can be
+            segmented into a space-separated sequence of dictionary words.
           </Card>
         </Col>
       </Row>
