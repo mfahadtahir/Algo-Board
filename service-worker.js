@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Algo-Board/precache-manifest.906ba084e2fbbd5a29827a8d3a680700.js"
+  "/Algo-Board/precache-manifest.bc5444139f9e3f4caebeae4ce3c09288.js"
 );
 
 self.addEventListener('message', (event) => {
