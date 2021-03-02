@@ -55,18 +55,18 @@ const routes = [
   { path: "/dashboard/default", exact: true, name: "Default", component: DashboardDefault },
 
   // Mathmatics
-  {
-    path: "/maths/chain-matrix-mul",
-    exact: true,
-    name: "Chain Matrix Multiplication",
-    component: ChainMatrixMultiplication,
-  },
-  {
-    path: "/maths/coin-change-making",
-    exact: true,
-    name: "Coin Change Making",
-    component: CoinChangeMaking,
-  },
+//   {
+//     path: "/maths/chain-matrix-mul",
+//     exact: true,
+//     name: "Chain Matrix Multiplication",
+//     component: ChainMatrixMultiplication,
+//   },
+//   {
+//     path: "/maths/coin-change-making",
+//     exact: true,
+//     name: "Coin Change Making",
+//     component: CoinChangeMaking,
+//   },
   {
     path: "/maths/integer-partition",
     exact: true,
@@ -99,12 +99,12 @@ const routes = [
     name: "Shortest Common Supersequence ",
     component: ShortestCommonSuperSequence,
   },
-  {
-    path: "/sets/knapsack",
-    exact: true,
-    name: "0/1 Knapsack Problem",
-    component: Knapsack,
-  },
+//   {
+//     path: "/sets/knapsack",
+//     exact: true,
+//     name: "0/1 Knapsack Problem",
+//     component: Knapsack,
+//   },
   {
     path: "/sets/partition",
     exact: true,
