@@ -6,9 +6,9 @@ function generateNumber(min, max) {
 }
 
 function getDatum() {
-  let sin = [],
-    sin2 = [],
-    sin3 = [];
+  let sin = [];
+  // sin2 = [],
+  // sin3 = [];
 
   const len = 35 + Math.random() * (70 - 35);
   for (let i = 0; i < len; i++) {
@@ -48,17 +48,7 @@ function getDatum() {
 class MultiBarChart extends React.Component {
   render() {
     const data = getDatum();
-    return (
-      <NVD3Chart
-        type="multiBarChart"
-        datum={data}
-        x="x"
-        y="y"
-        height={300}
-        showValues
-        groupSpacing={0.2}
-      />
-    );
+    return <NVD3Chart type="multiBarChart" datum={data} x="x" y="y" height={300} showValues groupSpacing={0.2} />;
   }
 }
 

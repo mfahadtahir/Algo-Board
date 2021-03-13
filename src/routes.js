@@ -8,24 +8,16 @@ global.jQuery = $;
 const DashboardDefault = React.lazy(() => import("./Components/Dashboard/Default"));
 
 // Mathematics
-const ChainMatrixMultiplication = React.lazy(() =>
-  import("./Screens/Maths/ChainMatrixMultiplication")
-);
+// const ChainMatrixMultiplication = React.lazy(() => import("./Screens/Maths/ChainMatrixMultiplication"));
 const CoinChangeMaking = React.lazy(() => import("./Screens/Maths/CoinChangeMaking"));
 const IntegerPartition = React.lazy(() => import("./Screens/Maths/IntegerPartition"));
 const RodCutting = React.lazy(() => import("./Screens/Maths/RodCutting"));
 
 // Sets
-const LongestCommonSubsequence = React.lazy(() =>
-  import("./Screens/Sets/LongestCommonSubsequence")
-);
-const LongestIncreasingSubsequence = React.lazy(() =>
-  import("./Screens/Sets/LongestIncreasingSubsequence")
-);
-const ShortestCommonSuperSequence = React.lazy(() =>
-  import("./Screens/Sets/ShortestCommonSuperSequence")
-);
-const Knapsack = React.lazy(() => import("./Screens/Sets/Knapsack"));
+const LongestCommonSubsequence = React.lazy(() => import("./Screens/Sets/LongestCommonSubsequence"));
+const LongestIncreasingSubsequence = React.lazy(() => import("./Screens/Sets/LongestIncreasingSubsequence"));
+const ShortestCommonSuperSequence = React.lazy(() => import("./Screens/Sets/ShortestCommonSuperSequence"));
+// const Knapsack = React.lazy(() => import("./Screens/Sets/Knapsack"));
 const BalancedPartition = React.lazy(() => import("./Screens/Sets/BalancedPartition"));
 
 // Strings
@@ -35,9 +27,7 @@ const WordBreak = React.lazy(() => import("./Screens/Strings/WordBreak"));
 // Component Examples
 const UIBasicButton = React.lazy(() => import("./Components/UIElements/Basic/Button"));
 const UIBasicBadges = React.lazy(() => import("./Components/UIElements/Basic/Badges"));
-const UIBasicBreadcrumbPagination = React.lazy(() =>
-  import("./Components/UIElements/Basic/BreadcrumbPagination")
-);
+const UIBasicBreadcrumbPagination = React.lazy(() => import("./Components/UIElements/Basic/BreadcrumbPagination"));
 
 const UIBasicCollapse = React.lazy(() => import("./Components/UIElements/Basic/Collapse"));
 const UIBasicTabsPills = React.lazy(() => import("./Components/UIElements/Basic/TabsPills"));
@@ -55,18 +45,18 @@ const routes = [
   { path: "/dashboard/default", exact: true, name: "Default", component: DashboardDefault },
 
   // Mathmatics
-//   {
-//     path: "/maths/chain-matrix-mul",
-//     exact: true,
-//     name: "Chain Matrix Multiplication",
-//     component: ChainMatrixMultiplication,
-//   },
-//   {
-//     path: "/maths/coin-change-making",
-//     exact: true,
-//     name: "Coin Change Making",
-//     component: CoinChangeMaking,
-//   },
+  //   {
+  //     path: "/maths/chain-matrix-mul",
+  //     exact: true,
+  //     name: "Chain Matrix Multiplication",
+  //     component: ChainMatrixMultiplication,
+  //   },
+  {
+    path: "/maths/coin-change-making",
+    exact: true,
+    name: "Coin Change Making",
+    component: CoinChangeMaking,
+  },
   {
     path: "/maths/integer-partition",
     exact: true,
@@ -99,12 +89,12 @@ const routes = [
     name: "Shortest Common Supersequence ",
     component: ShortestCommonSuperSequence,
   },
-//   {
-//     path: "/sets/knapsack",
-//     exact: true,
-//     name: "0/1 Knapsack Problem",
-//     component: Knapsack,
-//   },
+  //   {
+  //     path: "/sets/knapsack",
+  //     exact: true,
+  //     name: "0/1 Knapsack Problem",
+  //     component: Knapsack,
+  //   },
   {
     path: "/sets/partition",
     exact: true,

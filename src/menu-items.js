@@ -12,12 +12,12 @@ export default {
           type: "collapse",
           icon: "feather icon-percent",
           children: [
-            {
-              id: "chain-matrix-multiplication",
-              title: "Chain Matrix Multiplication",
-              type: "item",
-              url: "/maths/chain-matrix-mul",
-            },
+            // {
+            //   id: "chain-matrix-multiplication",
+            //   title: "Chain Matrix Multiplication",
+            //   type: "item",
+            //   url: "/maths/chain-matrix-mul",
+            // },
             {
               id: "coin-change-making",
               title: "Coin Change Making",
@@ -44,12 +44,12 @@ export default {
           type: "collapse",
           icon: "feather icon-grid",
           children: [
-            {
-              id: "knapsack",
-              title: "0/1 Knapsack Problem",
-              type: "item",
-              url: "/sets/knapsack",
-            },
+            // {
+            //   id: "knapsack",
+            //   title: "0/1 Knapsack Problem",
+            //   type: "item",
+            //   url: "/sets/knapsack",
+            // },
             {
               id: "partition",
               title: "Balanced Partition",
